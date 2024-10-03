@@ -24,15 +24,11 @@
         <br />
         <label for="crop">Crop:</label>
         <select id="crop" name="crop" v-model="rptCrop">
-            <option selected>Kale</option>
-            <option>Broccoli</option>
-            <option>Peas</option>
+            <option v-for="crop in rptCrops">{{ crop }}</option>
         </select>
         <label for="area">Area:</label>
-        <select id="area" name="area">
-            <option selected>All</option>
-            <option>Chuau-1</option>
-            <option>SQ7</option>
+        <select id="area" name="area" v-model="rptArea">
+            <option v-for="area in rptAreas">{{ area }}</option>
         </select>
         <br />
         <br />
@@ -87,7 +83,10 @@
                 rptTitle: 'My Sample Harvest Report',
                 rptStartDate: "05-05-2020",
                 rptEndDate: "05-15-2020",
-                rptCrop: 'Kale'
+                rptCrops: ["Kale", "Broccoli", "Peas"],
+                rptCrop: "Kale",
+                rptAreas: ["All", "Chuau-1", "SQ7"],
+                rptArea: "All",
             }
         });
     </script>
