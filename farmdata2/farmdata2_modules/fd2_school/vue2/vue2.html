@@ -16,10 +16,10 @@
         <br />
         <label for="startdate">Start:</label>
         <input name="harvest-start" id="start" type="date" 
-        min="01-01-2014" max="01-01-2022" v-model="rptStartDate" />
+        min="01-01-2014" :max="rptEndDate" v-model="rptStartDate" />
         <label for="enddate">End:</label>
         <input name="harvest-end" id="end" type="date" 
-        min="05-05-2020" max="01-01-2022" v-model = "rptEndDate"/>
+        :min="rptStartDate" max="01-01-2022" v-model = "rptEndDate"/>
         <br />
         <br />
         <label for="crop">Crop:</label>
