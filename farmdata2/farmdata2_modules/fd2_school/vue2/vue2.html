@@ -32,8 +32,7 @@
         </select>
         <br />
         <br />
-        <button class="btn btn-primary" @click="harvestLogs.push({date:'2018-05-01', area:'SQ7',
-         crop:'kale', yield: 20, units:'Bunches'})">Generate Report</button>
+        <button class="btn btn-primary" @click="genReport">Generate Report</button>
 
         <hr />
     
@@ -85,8 +84,15 @@
                 newHarvestLog: {},
                 harvestLogs: [
                 ]
+            },
+            methods: {
+                genReport: function() {
+                    this.harvestLogs.push({date:'2018-05-01', area:'SQ7',
+         crop:'kale', yield: 20, units:'Bunches'})
+                }
             }
         });
+
         Vue.config.devtools = true;
     </script>
   </body>
