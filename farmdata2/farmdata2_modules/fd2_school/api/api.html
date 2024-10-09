@@ -91,11 +91,18 @@
             },
             methods: {
                 genReport: function() {
+                    axios.get('/farm.json').then((response) => {
+                        this.rptLanguage = response.data.languages.en.language;
+                        this.rptUser = response.data.user.name;
+                        this.rptFarm = response.data.name;
+                    })
+                    .catch((error) => {
+                        console.log("Error Occurred")
+                        console.log
+                    })
                     this.harvestLogs.push({date:'2018-05-01', area:'SQ7',
          crop:'kale', yield: 20, units:'Bunches'});
-                    this.rptLanguage = "Sample Farm";
-                    this.rptUser = "manager1";
-                    this.rptFarm = "English";
+                    
                 }
             }
         });
