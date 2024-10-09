@@ -41,9 +41,9 @@
         <br />
         <p>Details:</p>
         <ul>
-            <li><strong>Farm:</strong> {{ Farm }} </li>
-            <li><strong>User:</strong> {{ User }} </li>
-            <li><strong>Language:</strong> {{ Language }} </li>
+            <li><strong>Farm:</strong> {{ rptFarm }} </li>
+            <li><strong>User:</strong> {{ rptUser }} </li>
+            <li><strong>Language:</strong> {{ rptLanguage }} </li>
         </ul>
         <br />
         <ul>
@@ -85,14 +85,17 @@
                 rptArea: "All",
                 newHarvestLog: {},
                 harvestLogs: [],
-                Farm: "",
-                User: "",
-                Language: "",
+                rptFarm: "",
+                rptUser: "",
+                rptLanguage: "",
             },
             methods: {
                 genReport: function() {
                     this.harvestLogs.push({date:'2018-05-01', area:'SQ7',
-         crop:'kale', yield: 20, units:'Bunches'})
+         crop:'kale', yield: 20, units:'Bunches'});
+                    this.rptLanguage = "Sample Farm";
+                    this.rptUser = "manager1";
+                    this.rptFarm = "English";
                 }
             }
         });
